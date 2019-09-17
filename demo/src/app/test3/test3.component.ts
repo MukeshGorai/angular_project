@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-test3',
@@ -7,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Test3Component implements OnInit {
 public name='Mukesh Gorai';
-
-  constructor() { }
+public employee=[];
+  constructor(private _employeeService: EmployeeService) { }
 
   ngOnInit() {
+    this._employeeService.getEmployee()
+    .subscribe(data => this.employee=data);
   }
-  // updateValue(e){
-  //   this.name=e.target.value
-  // }
+
 }

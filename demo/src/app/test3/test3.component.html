@@ -3,3 +3,26 @@
 <!-- <input type="name" [value]="name" (input)="updateValue($event)"> -->
 <input type="name" [(ngModel)]="name">
 {{name}}
+<hr>
+<table class="table">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+          </tr>
+        </thead>
+    </table>
+<div *ngFor="let employee1 of employee">
+    <!-- {{employee.id}}. {{employee.name}}-{{employee.age}} -->
+
+<table class="table">
+        <tbody>
+          <tr>
+            <td>{{employee1.id}}</td>
+            <td>{{employee1.name}}</td>
+            <td>{{employee1.age}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>

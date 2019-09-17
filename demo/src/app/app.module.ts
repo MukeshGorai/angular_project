@@ -8,6 +8,7 @@ import { Test1Component } from './test1/test1.component';
 import { Test2Component } from './test2/test2.component';
 import { Test3Component } from './test3/test3.component';
 import { from } from 'rxjs';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { from } from 'rxjs';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule
 
   ],
   providers: [],
