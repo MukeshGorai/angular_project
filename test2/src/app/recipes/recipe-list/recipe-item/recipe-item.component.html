@@ -1,1 +1,9 @@
 <p>recipe-item works!</p>
+<a href="#" class="list-group-item clearfix"
+*ngFor="let recpe of recipes">
+<div class="pull-left">
+    <h4 class="list-group-item-heading">{{recpe.name}}</h4>
+    <p class="list-group-item-text">{{recpe.description}}</p>
+</div>
+
+</a>
