@@ -2,8 +2,8 @@
     margin-top: 30px;
 }
 .odd{
-  background-color: blue;
+  color: red;
 }
-.even{
+/* .even{
   background-color:  red;
-}
+} */
