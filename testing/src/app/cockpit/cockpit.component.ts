@@ -10,7 +10,7 @@ export class CockpitComponent implements OnInit {
   @Output() bluePrintCreated=new EventEmitter<{serverName: string, serverContent: string}>();
   // newServerName='';
   // newServerContent='';
-  @ViewChild('serverContentInput',{static:false}) serverContentInput: ElementRef;
+  @ViewChild('serverContentInput',{static:true}) serverContentInput: ElementRef;
   constructor() { }
 
   ngOnInit() {
@@ -24,6 +24,7 @@ export class CockpitComponent implements OnInit {
 }
 
 onAddBlueprint(nameInput: HTMLInputElement){
+ // this.serverContentInput.nativeElement.value="somthing is missing";
   this.bluePrintCreated.emit({
     serverName: nameInput.value,
     serverContent: this.serverContentInput.nativeElement.value

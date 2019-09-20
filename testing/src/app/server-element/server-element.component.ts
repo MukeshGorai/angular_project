@@ -11,10 +11,8 @@ export class ServerElementComponent implements OnInit{
   constructor() {
     console.log('constructor call');
    }
-ngOnChanges(change: SimpleChange){
-console.log('ngOnChanges call');
-console.log(change);
-}
+  
+
   ngOnInit() {
     console.log('ngOnInit call')
   }

@@ -7,17 +7,17 @@ import { ThrowStmt } from '@angular/compiler';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  serverElement=[{type:'server', name:'Testserver', content:'just a test!'}];
+  serverElements=[{type:'server', name:'Testserver', content:'just a test!'}];
  
   onServerAdded(serverData:{serverName: string, serverContent: string}){
-    this.serverElement.push({
+    this.serverElements.push({
       type: 'server',
       name: serverData.serverName,
       content: serverData.serverContent
     });
   }
     onAddBlueprint(bluePrint:{serverName: string, serverContent: string}){
-        this.serverElement.push({
+        this.serverElements.push({
           type: 'blueprint',
           name:bluePrint.serverName,
           content:bluePrint.serverContent

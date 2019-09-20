@@ -7,13 +7,13 @@
   <hr>
   <div class="row">
     <div class="col-xs-12">
-     <app-server-element *ngFor="let serverElement1 of serverElement"
-     [servelement]="serverElement1">
+     <app-server-element *ngFor="let serverElement of serverElements"
+     [servelement]="serverElement">
     
      <p>
-        <strong *ngIf="serverElement1.type === 'server'" style="color: red">{{serverElement1.content}}</strong>
-        <em *ngIf="serverElement1.type === 'blueprint'">{{serverElement1.content}}</em>
-        </p>
+        <strong *ngIf="serverElement.type === 'server'" style="color: red">{{serverElement.content}}</strong>
+        <em *ngIf="serverElement.type === 'blueprint'">{{serverElement.content}}</em>
+    </p>
 
     </app-server-element>
 
