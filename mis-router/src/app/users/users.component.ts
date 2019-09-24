@@ -11,8 +11,17 @@ export class UsersComponent implements OnInit {
 
   ngOnInit() {
   }
-  users=[{"id":1,"name":"abc"
-         },
-         {"id":2, "name":"muk"}
-        ];
+  users=[
+    {
+      "id":1,
+      "name":"abc"
+    },
+    {
+     "id":2, 
+     "name":"muk"
+    },
+   {
+    "id":3, 
+   "name":"bik"}
+       ];
 }
