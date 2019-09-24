@@ -20,7 +20,7 @@ private servers:{id:number, name: string, status: string}[]=[];
     this.servers=this.serversService.getServers();
   }
 onReload(){
-this.router.navigate(['servers'],{relativeTo:this.route});
+//this.router.navigate(['servers'],{relativeTo:this.route});
 }
 
 }
