@@ -1,5 +1,5 @@
 {
-  "name": "observableapp",
+  "name": "formsapp",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -21,7 +21,6 @@
     "@angular/router": "~8.2.5",
     "bootstrap": "^4.0.0-alpha.6",
     "rxjs": "~6.4.0",
-    "rxjs-compat": "^6.5.3",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

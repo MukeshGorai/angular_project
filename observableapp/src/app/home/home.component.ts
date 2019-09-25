@@ -1,26 +1,32 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable,Observer} from 'rxjs';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Observable,Observer, Subscription} from 'rxjs';
 import { interval } from 'rxjs';
-
-
-
+import 'rxjs/add/operator/map'
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
+numberObsSubscription: Subscription;
+customObsSubscription: Subscription;
 
   constructor() { }
 
   ngOnInit() {
-    // interval(1000)
-    // .subscribe(
-    //   (number: number)=>{
-    //     console.log(number);
-    //   }
-    // );
+    const myNumers=
+    interval(1000)
+    .map(
+      (data: number)=>{
+        return data *2;
+      }
+    )
+    this.numberObsSubscription = myNumers.subscribe(
+      (number: number)=>{
+        console.log(number);
+      }
+    );
     const myObservable=
     Observable.create(observer=>{
       setTimeout(()=>{
@@ -33,12 +39,18 @@ export class HomeComponent implements OnInit {
         //observer.error('this does not work');
         observer.complete();
       },5000);
+      setTimeout(()=>{
+        observer.next('third package');
+      },6000);
     });
-    myObservable.subscribe(
+    this.customObsSubscription= myObservable.subscribe(
       (data: string)=>{ console.log(data);},
       (error: string)=>{ console.log(error);},
       ()=>{console.log('complete');}
     );
-  }
-
+  } 
+ngOnDestroy(){
+this.numberObsSubscription.unsubscribe();
+this.customObsSubscription.unsubscribe();
+}
 }
