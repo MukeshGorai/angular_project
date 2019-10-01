@@ -2,18 +2,20 @@
 <header>
     <nav>
         <ul class="nav nab-tabs">
-            <li class="nav-item"><a class="nav-link active" href="#">Recipe Book</a></li>
-            <li class="nav-item"><a class="nav-link " href="#"(click)="onSelect('recipe')">Recipe</a></li>
-            <li class="nav-item"><a class="nav-link " href="#"(click)="onSelect('shopping-list')">Shopping List</a></li>
-            <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" style="margin-left: 1050px;">
-                    Manage <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                        <li><a href="#">HTML</a></li>
-                        <li><a href="#">CSS</a></li>
-                        <li><a href="#">JavaScript</a></li>
-                      </ul>
+            <li class="nav-item"><a class="nav-link" href="#">Recipe Book</a></li>
+            <li class="nav-item"><a class="nav-link"routerLinkActive="active" routerLink="/recipes" >Recipe</a></li>
+            <li class="nav-item"><a class="nav-link"routerLinkActive="active" routerLink="/shopping-list" >Shopping List</a></li>
+                    <div ngbDropdown class="d-inline-block">
+                        <button 
+                        type="button"
+                        class="btn dropdown-toggle"ngbDropdownToggle style="margin-left: 1050px;">
+                            Manage<span class="caret"></span>
+                        </button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                     <li>  <a style="cursor: pointer" ngbDropdownItem>Save Data</a></li> 
+                     <li> <a style="cursor: pointer"  ngbDropdownItem>Fetch Data</a></li> 
+                    
+                      </div>
                     </div>
         </ul>
         <hr>
