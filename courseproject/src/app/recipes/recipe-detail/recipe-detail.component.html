@@ -17,8 +17,8 @@
             </button>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
          <li>  <a style="cursor: pointer" (click)="onAddShopping()" ngbDropdownItem>To shopping List</a></li> 
-         <li> <a style="cursor: pointer" ngbDropdownItem>Edit Recipe</a></li> 
-         <li>  <a style="cursor: pointer" ngbDropdownItem>Delete Recipe</a></li> 
+         <li> <a style="cursor: pointer" ngbDropdownItem (click)="onEditRecipe()">Edit Recipe</a></li> 
+         <li>  <a style="cursor: pointer" ngbDropdownItem (click)="onDeleteRecipe()">Delete Recipe</a></li> 
           </div>
         </div>
     </div>
