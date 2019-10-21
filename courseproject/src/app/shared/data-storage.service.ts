@@ -3,18 +3,24 @@ import { HttpClient } from '@angular/common/http';
 import { RecipeService } from '../recipes/recipe.service';
 import { Recipe } from '../recipes/recipe.model';
 import { map } from 'rxjs/operators';
+import { AuthService } from '../auth/auth.service';
 
 @Injectable()
 export class DataStorageService{
     constructor(private http: HttpClient,
-        private recipesSercice: RecipeService){}
+        private recipesSercice: RecipeService,
+        private authService: AuthService){}
         recipes: Recipe[];  
 
     storeRecipes(){
-      return  this.http.put('https://udemy-ng-http-eff04.firebaseio.com/recipes.json',this.recipesSercice.getRecipes());
+      const token=  this.authService.getToken();
+      return  this.http.put('https://udemy-ng-http-eff04.firebaseio.com/recipes.json?auth=' +token,this.recipesSercice.getRecipes());
     }
     getRecipe(){
-     this.http.get('https://udemy-ng-http-eff04.firebaseio.com/recipes.json')
+
+    const token=  this.authService.getToken();
+      
+     this.http.get('https://udemy-ng-http-eff04.firebaseio.com/recipes.json?auth=' +token)
         // .subscribe(
         //   (response:Response)=>{
         //     const recipes: Recipe= response.json(); 

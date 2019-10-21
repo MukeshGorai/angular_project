@@ -1,9 +1,18 @@
-<app-header></app-header>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-           <app-recipes></app-recipes>
-           <app-shopping-list></app-shopping-list>
+<div class="card text-center">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+              <a class="nav-link " routerLinkActive routerLink="/react">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive routerLink="/search">Search</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive routerLink="/form">Info</a>
+            </li>
+          </ul>
         </div>
-    </div>
-</div>
+      </div>
+
+<router-outlet></router-outlet>
+

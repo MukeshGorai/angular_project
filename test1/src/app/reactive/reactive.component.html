@@ -1,0 +1,43 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+<div class="text-center">
+        <label for="exampleInputEmail1">Email address</label>
+    <input formControlName="email" />
+    <span
+      *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.required"
+    >
+      Email is required.
+    </span>
+    <span
+      *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.invalidEmail"
+    >
+      Value has to be a valid email address.
+    </span>
+    <br />
+    <label for="exampleInputEmail1">Mobile Number</label>
+   <input type="number" formControlName="mobile" />
+    <span
+      *ngIf="(mobile.dirty || mobile.touched) && mobile.invalid && mobile.errors.required"
+    >
+      Mobile is required.
+    </span>
+    <span
+      *ngIf="(mobile.dirty || mobile.touched) && mobile.invalid && mobile.errors.invalidNumber"
+    >
+      Value has to be a number.
+    </span>
+    <br />
+  
+    <label for="exampleInputEmail1">Country</label>
+    <select formControlName="country">
+      <option *ngFor="let country of countries" [value]="country"
+        >{{country}}</option
+      >
+    
+    </select>
+
+    <br />
+  
+    <button type="submit" [disabled]="!contactForm.valid">Save</button>
+    <button type="reset" (click)="revert()">Revert</button>
+</div>
+  </form>

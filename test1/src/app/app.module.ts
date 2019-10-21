@@ -2,29 +2,31 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { headerComponent } from './header/header.component';
-import { RecipesComponent } from './recipes/recipes.component';
-import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
-import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import { Form1Component } from './form1/form1.component';
+import { ReactiveComponent } from './reactive/reactive.component';
+import { AboutComponent } from './about/about.component';
+import { FilterPipe } from './filter.pipe'
+import { FormsModule } from '@angular/forms'
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    headerComponent,
-    RecipesComponent,
-    RecipeListComponent,
-    RecipeDetailComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
+    Form1Component,
+    ReactiveComponent,
+    AboutComponent,
+    FilterPipe,
+ 
 
  
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
